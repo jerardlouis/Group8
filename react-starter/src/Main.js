@@ -27,9 +27,10 @@ function Main() {
       <div className="bookFeed">
       <h> Today's picks </h>
       <p> location </p>
-        <div className="feed">
-        
-        </div>
+      <img className="img1" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="100" width="100"/>
+      <img className="img2" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="100" width="100"/>
+      <img className="img3" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="100" width="100"/>
+      <img className="img4" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="100" width="100"/>
       </div>
     </div>
   );
