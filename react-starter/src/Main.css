@@ -6,6 +6,7 @@
     min-width: 300px;
 }
 .Header {
+    font-weight: bold;
     padding: 5px;
     text-align: left;
     margin-left: 5px;
@@ -27,7 +28,8 @@
     background: white;
     
     width: 100%;
-
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
 }
 .button {
     border-radius: 8px;
@@ -37,4 +39,46 @@
 }
 .button:hover {
     box-shadow: 0px 0px 5px #99ccff;
+}
+.NewForYou {
+    border-bottom: 1px solid black;
+    text-align: left;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom:15px;
+}
+
+.NewForYou h {
+    position: relative;
+    font-weight: bold;
+    font-size: 13px;
+}
+.NewForYou .seeAll {
+    float: right;
+    font-size: 8px;
+}
+.NewForYou p {
+    font-size: 10px;
+}
+.NewForYou .daysAgo {
+    font-size: 8px;
+}
+.NewForYou img {
+    float:left;
+    padding: 5px;
+    float: left;
+    border-radius: 100%;
+}
+
+.bookFeed {
+}
+.bookFeed h {
+    float: left;
+}
+.bookFeed p {
+    float: right;
+}
+.bookFeed .feed {
+    display: grid;
 }
