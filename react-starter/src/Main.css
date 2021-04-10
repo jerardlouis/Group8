@@ -11,6 +11,10 @@
     text-align: left;
     margin-left: 5px;
     margin-right: 5px;
+    height: 20px;
+}
+.Header .backButton {
+    float: left;
 }
 .Header img {
     float: right;

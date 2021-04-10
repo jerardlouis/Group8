@@ -5,7 +5,8 @@ function Profile() {
   return (
     <div className="Main">
       <div className="Header">
-      <h>Back Button Goes Here</h>
+      <h></h>
+      <img className="backButton" src="https://static.thenounproject.com/png/344330-200.png" width="20" height="20"/>
       <img className="searchIcon" src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/194_Instagram_Search_Sets-512.png" width="20" height="20"/>
       <img className="bookMark" src="https://pics.freeicons.io/uploads/icons/png/15746672971543238863-512.png" width="20" height="20"/>
       <img className="icon" src= "https://static.thenounproject.com/png/630740-200.png" width="20" height="20"/>
