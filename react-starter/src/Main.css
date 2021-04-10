@@ -79,7 +79,9 @@
 }
 .feedHeader {
     display: flex;
+    padding-left: 10px;
 }
+
 
 .bookFeed {
     display: grid;
