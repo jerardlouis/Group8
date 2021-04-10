@@ -1,6 +1,7 @@
 import './Main.css';
 
 function Main() {
+  var bookIcon= "https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png";
   return (
     <div className="Main">
       <div className="Header">
@@ -24,13 +25,16 @@ function Main() {
       </p>
       <p className="daysAgo"> 1 day ago </p>
       </div>
-      <div className="bookFeed">
+      <div className="feedHeader">
       <h> Today's picks </h>
       <p> Newark </p>
-      <img className="img1" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="100" width="100"/>
-      <img className="img2" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="100" width="100"/>
-      <img className="img3" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="100" width="100"/>
-      <img className="img4" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="100" width="100"/>
+      </div>
+      <div className="bookFeed">
+      
+      <img className="img1" src={bookIcon} height="100" width="100"/>
+      <img className="img2" src={bookIcon} height="100" width="100"/>
+      <img className="img3" src={bookIcon} height="100" width="100"/>
+      <img className="img4" src={bookIcon} height="100" width="100"/>
       </div>
     </div>
   );
