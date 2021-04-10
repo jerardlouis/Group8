@@ -55,9 +55,12 @@
     font-size: 13px;
 }
 .NewForYou .seeAll {
+    display: flex;
+    align-items:center;
     float: right;
     font-size: 8px;
 }
+
 .NewForYou p {
     font-size: 10px;
 }
@@ -71,7 +74,7 @@
     border-radius: 100%;
 }
 .feedHeader {
-    
+    display: flex;
 }
 
 .bookFeed {
@@ -81,7 +84,7 @@
     grid-column-gap: 0px;
     grid-row-gap: 10%;
     justify-items: center;
-    
+
 }
 
 .bookFeed .img1 {

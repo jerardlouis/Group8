@@ -13,17 +13,15 @@ function Profile() {
       </div>
 
       <div className="NewForYou">
-      <h>New for you</h>
-      <p className="seeAll">See all (5)</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="60" width="60"/>
+      <h>USERNAME</h>
+      <p className="seeAll"><img src="https://cdn2.iconfinder.com/data/icons/celebration-and-party-8/96/star-512.png" width="15" height="15"/>5 stars</p>
+      <img src="https://static.thenounproject.com/png/630740-200.png" height="60" width="60"/>
       <p>
-      Bob replied to your message about his listing: Calc 2, used
+      LOCATION
       </p>
-      <p className="daysAgo"> 1 day ago </p>
       </div>
       <div className="feedHeader">
       <h> Books by USERNAME </h>
-      <p> Newark </p>
       </div>
       <div className="bookFeed">
       
