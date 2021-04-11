@@ -24,7 +24,10 @@ function BookListing() {
       <div className="Listing">
       <img src={bookIcon}height="300"/>
       <h>Book Name</h>
-      <p>Description</p>
+      <p>Price</p>
+      <p1>Description</p1>
+      <br/>
+      <br/><p1>Location</p1>
       </div>
     </div>
   );
