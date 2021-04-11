@@ -110,13 +110,17 @@
     border: 1px solid black;
 }
 .Listing {
+    text-align: left;
 }
 .Listing img{
-    
-    border: 20px solid white;
+    text-align: center;
+    margin-left: 10%;
 }
 .Listing h {
     margin-left: 5%;
     text-align: left;
     font-weight: bold;
+}
+.Listing p {
+    margin-left: 5%;
 }
