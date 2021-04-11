@@ -111,3 +111,14 @@
     grid-area: 2 /2 /3 / 2;
     border: 1px solid black;
 }
+.Listing {
+}
+.Listing img{
+    
+    border: 20px solid white;
+}
+.Listing h {
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+}
