@@ -3,7 +3,9 @@ import Profile from './Profile.js';
 import Main from './Main.js';
 import Search from './Search.js'
 import React, { useState } from 'react';
+import BookListing from './BookListing.js';
 const fetch = require("node-fetch");
+
 function App() {
   const [page, setpage] = useState(1);
   const [categories, setcategories] = useState([])
@@ -19,7 +21,8 @@ function App() {
   if (page === 1){  //If page is 1, main page
   return (
     <div className="App">
-      <Profile booksearch={booksearch}/>
+     <Main booksearch={booksearch}/>
+     
     </div>
   );
   }
