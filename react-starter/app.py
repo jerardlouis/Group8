@@ -1,5 +1,5 @@
 import os
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, json, request
 
 app = Flask(__name__, static_folder='./build/static')
 
@@ -8,7 +8,14 @@ app = Flask(__name__, static_folder='./build/static')
 @app.route('/<path:filename>')
 def index(filename):
     return send_from_directory('./build', filename)
-
+bookcategories = ['Computer Science','History']
+@app.route('/booksearch', methods=['GET'])
+def login():
+    if request.method == 'GET':
+        return {
+            'bookcategories': bookcategories
+        }
+    
 
 app.run(
     host=os.getenv('IP', '0.0.0.0'),
