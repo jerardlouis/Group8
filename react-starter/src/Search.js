@@ -7,10 +7,12 @@ function Search(props){
     //Renders the search page based on the categories from the database
 const [page, setpage] = useState(3);
 const [results, setresults] = useState([])
+const [category, setcategory] = useState("none")
     function Clickhandler(category){
         console.log(category);
         fetch('/booksearch/' + category, {method : 'GET'}).then(response => response.json()).then(data => setresults(data["results"]));
         //console.log(results);
+        setcategory(category)
         setpage(4)
     }
     if(page == 3){
@@ -22,7 +24,7 @@ const [results, setresults] = useState([])
     }
     if (page == 4)
      return(
-         <Results results = {results}/>
+         <Results results = {results} category = {category}/>
       /*  <div className="Main">
       <h1>{<ul>{results.map(x => <li>{x}</li>)}</ul>}</h1>
       </div>*/

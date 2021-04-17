@@ -11,6 +11,12 @@ def index(filename):
 bookcategories = ['Computer Science','History']
 results = {"Computer Science" : ["Python for beginners", "Data structures"], 
 "History" : ["A brand new world", "700 BC"]}
+
+booklisting = {"700 BC" : ["700BC","120$","Its in good condition","Newark"],
+    "A brand new world" : ["A brand new world","120$","Its in good condition","Newark"],
+    "Python for beginners" : ["Python for beginners","120$","Its in good condition","Newark"],
+    "Data structures" : ["Data structures","400$","Its in good condition","Newark"]
+}
 @app.route('/booksearch', methods=['GET'])
 def login():
     if request.method == 'GET':
@@ -20,7 +26,9 @@ def login():
 @app.route('/booksearch/<category>', methods=['GET'])
 def searchresults(category):
     return {"results" : results[category]}
-    
+@app.route('/booksearch/<category>/<bookname>', methods=['GET'])
+def book(category,bookname):
+    return { bookname : booklisting[bookname]}   
 
 app.run(
     host=os.getenv('IP', '0.0.0.0'),
