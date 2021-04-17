@@ -21,7 +21,7 @@ function App() {
   if (page === 1){  //If page is 1, main page
   return (
     <div className="App">
-     <Main booksearch={booksearch}/>
+     <BookListing />
      
     </div>
   );

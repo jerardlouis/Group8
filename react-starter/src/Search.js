@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import Results from './Results.js'
 const fetch = require("node-fetch");
 
 function Search(props){
@@ -21,9 +22,12 @@ const [results, setresults] = useState([])
     }
     if (page == 4)
      return(
-        <div className="Main">
-      <h1>{results}</h1>
-      </div>
+         <Results results = {results}/>
+      /*  <div className="Main">
+      <h1>{<ul>{results.map(x => <li>{x}</li>)}</ul>}</h1>
+      </div>*/
     );
 }
 export default Search
+
+//<ul>{results.map(x => <li>{x}</li>)}</ul>
