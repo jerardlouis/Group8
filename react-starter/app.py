@@ -9,12 +9,17 @@ app = Flask(__name__, static_folder='./build/static')
 def index(filename):
     return send_from_directory('./build', filename)
 bookcategories = ['Computer Science','History']
+results = {"Computer Science" : ["Python for beginners", "Data structures"], 
+"History" : ["A brand new world", "700 BC"]}
 @app.route('/booksearch', methods=['GET'])
 def login():
     if request.method == 'GET':
         return {
             'bookcategories': bookcategories
         }
+@app.route('/booksearch/<category>', methods=['GET'])
+def searchresults(category):
+    return {"results" : results[category]}
     
 
 app.run(
