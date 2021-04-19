@@ -72,7 +72,7 @@ export default class InterestedPage extends Component {
             </div>
             <div className="msg"></div>
             <div className="btn">
-              {this.state.showMessage && <p>Resuest has been Submitted!</p>}
+              {this.state.showMessage && <p>Request has been Submitted!</p>}
               <button onClick={this.onButtonClickHandler} type="submit">
                 Submit Request
               </button>
