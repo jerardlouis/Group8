@@ -1,6 +1,6 @@
 import './Main.css';
 
-function BookListing() {
+function BookListing(props) {
   var bookIcon= "https://images-na.ssl-images-amazon.com/images/I/71Pryq-7E-L._SL1012_.jpg";
   return (
     <div className="Main">
@@ -23,11 +23,11 @@ function BookListing() {
       </div>
       <div className="Listing">
       <img src={bookIcon}height="300"/>
-      <h>Book Name</h>
-      <p>Price</p>
-      <p1>Description</p1>
+      <h>Book Name: {props.booklisting[0]}</h>
+      <p>Price: {props.booklisting[1]}</p>
+      <p1>Description:{props.booklisting[2]}</p1>
       <br/>
-      <br/><p1>Location</p1>
+      <br/><p1>Location:{props.booklisting[3]}</p1>
       </div>
     </div>
   );
