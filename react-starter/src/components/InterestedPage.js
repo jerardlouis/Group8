@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './InterestedPage.css';
 
+require('dotenv').config();
+
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+const USER_ID = process.env.REACT_APP_USER_ID;
+
 export default class InterestedPage extends Component {
   state = {
     showMessage: false,
@@ -14,16 +19,14 @@ export default class InterestedPage extends Component {
   sendEmail(e) {
     e.preventDefault();
 
-    emailjs
-      .sendForm('service_4od8f6b', 'BookBusterGMAIL', e.target, 'user_xvG2TepVpZ0EoDKqv7rXS')
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        },
-      );
+    emailjs.sendForm(SERVICE_ID, 'BookBusterGMAIL', e.target, USER_ID).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      },
+    );
     e.target.reset();
   }
   render() {
