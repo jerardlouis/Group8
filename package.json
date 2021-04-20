@@ -24,7 +24,7 @@
   "engines": {
     "npm": "7.x",
     "node": "10.x"
-  }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
