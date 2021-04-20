@@ -8,7 +8,7 @@ function Main(props) {
       <h>Books</h>
       <img className="searchIcon" onClick = {props.booksearch}src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/194_Instagram_Search_Sets-512.png" width="20" height="20"/>
       <img className="bookMark" src="https://pics.freeicons.io/uploads/icons/png/15746672971543238863-512.png" width="20" height="20"/>
-      <img className="icon" src= "https://static.thenounproject.com/png/630740-200.png" width="20" height="20"/>
+      <img className="icon" onClick = {props.profileredirect} src= "https://static.thenounproject.com/png/630740-200.png" width="20" height="20"/>
       
       </div>
       <div className="HeaderButtons">
@@ -31,10 +31,10 @@ function Main(props) {
       </div>
       <div className="bookFeed">
       
-      <img className="img1" src={bookIcon} height="100" width="100"/>
-      <img className="img2" src={bookIcon} height="100" width="100"/>
-      <img className="img3" src={bookIcon} height="100" width="100"/>
-      <img className="img4" src={bookIcon} height="100" width="100"/>
+      <img className="img1" src={bookIcon} onClick={() => props.Clickhandler("Python for beginners")} height="100" width="100"/>
+      <img className="img2" src={bookIcon} onClick={() => props.Clickhandler("Python for beginners")} height="100" width="100"/>
+      <img className="img3" src={bookIcon} onClick={() => props.Clickhandler("Python for beginners")} height="100" width="100"/>
+      <img className="img4" src={bookIcon} onClick={() => props.Clickhandler("Python for beginners")} height="100" width="100"/>
       </div>
     </div>
   );
