@@ -60,7 +60,7 @@ function App() {
   if (page === 5){    //if page is 3, search page
     return (
     <div className="App">
-      <BookListing booksearch = {booksearch} booklisting = {booklisting} profileredirect = {profileredirect} mainredirect = {mainredirect}/>
+      <BookListing username = {status} booksearch = {booksearch} booklisting = {booklisting} profileredirect = {profileredirect} mainredirect = {mainredirect}/>
     </div>
   );
   }
