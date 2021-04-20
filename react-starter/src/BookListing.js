@@ -10,12 +10,12 @@ function BookListing(props) {
         <h></h>
         <img
           className="backButton"
-          src="https://static.thenounproject.com/png/344330-200.png"
+          src="https://static.thenounproject.com/png/344330-200.png" onClick = {props.mainredirect}
           width="20"
           height="20"
         />
         <img
-          className="searchIcon"
+          className="searchIcon" onClick = {props.booksearch}
           src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/194_Instagram_Search_Sets-512.png"
           width="20"
           height="20"
@@ -27,7 +27,7 @@ function BookListing(props) {
           height="20"
         />
         <img
-          className="icon"
+          className="icon" onClick = {props.profileredirect}
           src="https://static.thenounproject.com/png/630740-200.png"
           width="20"
           height="20"
@@ -35,7 +35,7 @@ function BookListing(props) {
       </div>
 
       <div className="NewForYou">
-        <h>USERNAME</h>
+        <h>{props.username}</h>
         <p className="seeAll">
           <img
             src="https://cdn2.iconfinder.com/data/icons/celebration-and-party-8/96/star-512.png"
