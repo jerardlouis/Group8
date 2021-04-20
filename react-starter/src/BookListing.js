@@ -35,7 +35,7 @@ function BookListing(props) {
       </div>
 
       <div className="NewForYou">
-        <h>USERNAME</h>
+        <h>{props.username}</h>
         <p className="seeAll">
           <img
             src="https://cdn2.iconfinder.com/data/icons/celebration-and-party-8/96/star-512.png"
