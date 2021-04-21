@@ -1,7 +1,6 @@
 # Book Busters
 
 To use this repository, you must follow these steps: 
-1. In your terminal run git clone https://github.com/jerardlouis/Group8.git
 
 ## Requirements
 1. Install npm by running npm install
