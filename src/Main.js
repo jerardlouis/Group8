@@ -1,43 +1,129 @@
 import './Main.css';
+import PropTypes from 'prop-types';
+import React from 'react';
 
+function pass() {}
 function Main(props) {
-  var bookIcon= "https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png";
+  const bookIcon = 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png';
   return (
     <div className="Main">
       <div className="Header">
-      <h>Books</h>
-      <img className="searchIcon" onClick = {props.booksearch}src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/194_Instagram_Search_Sets-512.png" width="20" height="20"/>
-      <img className="bookMark" src="https://pics.freeicons.io/uploads/icons/png/15746672971543238863-512.png" width="20" height="20"/>
-      <img className="icon" onClick = {props.profileredirect} src= "https://static.thenounproject.com/png/630740-200.png" width="20" height="20"/>
-      
+        <h>Books</h>
+        <div onClick={props.booksearch} role="button" tabIndex={0}>
+          <img
+            alt="searchIcon"
+            className="searchIcon"
+            src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/194_Instagram_Search_Sets-512.png"
+            width="20"
+            height="20"
+          />
+        </div>
+        <img
+          alt="savebook"
+          className="bookMark"
+          src="https://pics.freeicons.io/uploads/icons/png/15746672971543238863-512.png"
+          width="20"
+          height="20"
+        />
+        <div onClick={props.profileredirect} role="button" tabIndex={0}>
+          <img
+            alt="profile"
+            className="icon"
+            src="https://static.thenounproject.com/png/630740-200.png"
+            width="20"
+            height="20"
+          />
+        </div>
       </div>
       <div className="HeaderButtons">
-      <button class="button">Loan Book</button>
-      <button class="button">Categories</button>
+        <button type="submit" className="button">Loan Book</button>
+        <button type="submit" className="button">Categories</button>
       </div>
-      
+
       <div className="NewForYou">
-      <h>New for you</h>
-      <p className="seeAll">See all (5)</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png" height="60" width="60"/>
-      <p>
-      Bob replied to your message about his listing: Calc 2, used
-      </p>
-      <p className="daysAgo"> 1 day ago </p>
+        <h>New for you</h>
+        <p className="seeAll">See all (5)</p>
+        <img
+          alt="book"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png"
+          height="60"
+          width="60"
+        />
+        <p>Bob replied to your message about his listing: Calc 2, used</p>
+        <p className="daysAgo"> 1 day ago </p>
       </div>
       <div className="feedHeader">
-      <h> Today's picks </h>
-      <p> Newark </p>
+        <h> Today&apos;s picks </h>
+        <p> Newark </p>
       </div>
       <div className="bookFeed">
-      
-      <img className="img1" src={bookIcon} onClick={() => props.Clickhandler("Python for beginners")} height="100" width="100"/>
-      <img className="img2" src={bookIcon} onClick={() => props.Clickhandler("Python for beginners")} height="100" width="100"/>
-      <img className="img3" src={bookIcon} onClick={() => props.Clickhandler("Python for beginners")} height="100" width="100"/>
-      <img className="img4" src={bookIcon} onClick={() => props.Clickhandler("Python for beginners")} height="100" width="100"/>
+        <div
+          role="button"
+          onClick={() => props.Clickhandler('Python for beginners')}
+          tabIndex={0}
+        >
+          <img
+            alt="book"
+            className="img1"
+            src={bookIcon}
+            height="100"
+            width="100"
+          />
+        </div>
+        <div
+          role="button"
+          onClick={() => props.Clickhandler('Python for beginners')}
+          tabIndex={0}
+        >
+          <img
+            alt="book"
+            className="img2"
+            src={bookIcon}
+            height="100"
+            width="100"
+          />
+        </div>
+        <div
+          role="button"
+          onClick={() => props.Clickhandler('Python for beginners')}
+          tabIndex={0}
+        >
+          <img
+            alt="book"
+            className="img3"
+            src={bookIcon}
+            height="100"
+            width="100"
+          />
+        </div>
+        <div
+          role="button"
+          onClick={() => props.Clickhandler('Python for beginners')}
+          tabIndex={0}
+        >
+          <img
+            alt="book"
+            className="img4"
+            src={bookIcon}
+            height="100"
+            width="100"
+          />
+        </div>
       </div>
     </div>
   );
 }
+
+Main.propTypes = {
+  booksearch: PropTypes.func,
+  profileredirect: PropTypes.func,
+  Clickhandler: PropTypes.func,
+
+};
+Main.defaultProps = {
+  booksearch: pass(),
+  profileredirect: pass(),
+  Clickhandler: pass(),
+};
 
 export default Main;
