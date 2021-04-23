@@ -1,0 +1,131 @@
+.Main {
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    margin: auto;
+    max-width: 500px;
+    min-width: 300px;
+}
+.Header {
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 20px;
+}
+.Header .backButton {
+    float: left;
+}
+.Header img {
+    float: right;
+    border: 1px solid black;
+    border-radius:100%;
+    margin-left: 5px;
+}
+.Header img:hover {
+    box-shadow: 0px 0px 5px #99ccff;
+}
+.HeaderButtons {
+    margin-top: 2px;
+    text-align: center;
+    border: none;
+    background: white;
+    
+    width: 100%;
+    padding-bottom: 5px;
+}
+.button {
+    border-radius: 8px;
+    margin-right: 2px;
+    margin-left: 2px;
+    width: 40%;
+}
+.button:hover {
+    box-shadow: 0px 0px 5px #99ccff;
+}
+.NewForYou {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: left;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom:15px;
+}
+
+.NewForYou h {
+    position: relative;
+    font-weight: bold;
+    font-size: 13px;
+}
+.NewForYou .seeAll {
+    display: flex;
+    align-items:center;
+    float: right;
+    font-size: 8px;
+}
+
+.NewForYou p {
+    font-size: 10px;
+}
+.NewForYou .daysAgo {
+    font-size: 8px;
+}
+.NewForYou img {
+    float:left;
+    padding: 5px;
+    float: left;
+    border-radius: 100%;
+}
+.feedHeader {
+    display: flex;
+    padding-left: 10px;
+}
+
+
+.bookFeed {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10%;
+    justify-items: center;
+
+}
+
+.bookFeed .img1 {
+    
+    grid-area: 1 / 1 / 3 / 2;
+    border: 1px solid black;
+}
+
+.bookFeed .img2 {
+    grid-area: 1 /2 /3 / 2;
+    border: 1px solid black;
+}
+.bookFeed .img3 {
+    grid-area: 2 / 1 / 3 / 2;
+    border: 1px solid black;
+}
+.bookFeed .img4 {
+    grid-area: 2 /2 /3 / 2;
+    border: 1px solid black;
+}
+.Listing {
+    text-align: left;
+}
+.Listing img{
+    text-align: center;
+    margin-left: 10%;
+}
+.Listing h {
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+}
+.Listing p {
+    margin-left: 5%;
+}
+.Listing p1 {
+    margin-left: 5%;
+}
