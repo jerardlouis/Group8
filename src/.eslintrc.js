@@ -8,10 +8,10 @@ module.exports = {
     '.eslintrc.js',
     'InterestedButton.js',
     'InterestedPage.js',
-    //'App.js',
+    'App.js',
     'BookListing.js',
     'Login.js',
-    //'Main.js',
+    'Main.js',
     'Profile.js',
     'Results.js',
     'Search.js',
@@ -35,6 +35,7 @@ module.exports = {
     // "jsx-a11y/no-static-element-interactions":"off",
     // "react/destructuring-assignment" :"off",
     // "react/require-default-props" : "off",
-    //'dot-notation' : 'off'
+    //'dot-notation' : 'off',
+    'react/forbid-prop-types' : 'off'
   },
 };

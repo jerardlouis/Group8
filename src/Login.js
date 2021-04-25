@@ -1,4 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+
+function pass() {}
 export function Login(props) {
   const inputRef = useRef(null);
   function Clicked() {
@@ -18,5 +21,13 @@ export function Login(props) {
     </div>
   );
 }
+
+Login.propTypes = {
+  function: PropTypes.func,
+
+};
+Login.defaultProps = {
+  function: pass(),
+};
 
 export default Login;
