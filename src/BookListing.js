@@ -1,18 +1,32 @@
-import './Main.css';
-import './components/InterestedButton.css';
-import React from 'react';
-import PropTypes from 'prop-types';
-import { InterestedButton } from './components/InterestedButton';
+import "./Main.css";
+import "./components/InterestedButton.css";
+import React from "react";
+import PropTypes from "prop-types";
+import { InterestedButton } from "./components/InterestedButton";
 
 function pass() {}
-const bookarr = ['No', 'Books', 'Here', 'Now'];
+const bookarr = ["No", "Books", "Here", "Now"];
+
 function BookListing(props) {
-  const bookIcon = 'https://images-na.ssl-images-amazon.com/images/I/71Pryq-7E-L._SL1012_.jpg';
+  const {
+    username,
+    booksearch,
+    booklisting,
+    profileredirect,
+    mainredirect,
+  } = props;
+  const bookIcon =
+    "https://images-na.ssl-images-amazon.com/images/I/71Pryq-7E-L._SL1012_.jpg";
   return (
     <div className="Main">
       <div className="Header">
         <h />
-        <div onClick={props.mainredirect} role="button" tabIndex={0}>
+        <div
+          onClick={mainredirect}
+          role="button"
+          tabIndex={0}
+          onKeyPress={mainredirect}
+        >
           <img
             alt="backbutton"
             className="backButton"
@@ -21,7 +35,12 @@ function BookListing(props) {
             height="20"
           />
         </div>
-        <div onClick={props.booksearch} role="button" tabIndex={0}>
+        <div
+          onClick={booksearch}
+          role="button"
+          tabIndex={0}
+          onKeyPress={booksearch}
+        >
           <img
             alt="search"
             className="searchIcon"
@@ -37,7 +56,12 @@ function BookListing(props) {
           width="20"
           height="20"
         />
-        <div onClick={props.profileredirect} role="button" tabIndex={0}>
+        <div
+          onClick={profileredirect}
+          role="button"
+          tabIndex={0}
+          onKeyPress={profileredirect}
+        >
           <img
             alt="icon"
             className="icon"
@@ -49,7 +73,7 @@ function BookListing(props) {
       </div>
 
       <div className="NewForYou">
-        <h>{props.username}</h>
+        <h>{username}</h>
         <p className="seeAll">
           <img
             alt="review"
@@ -71,21 +95,21 @@ function BookListing(props) {
         <img alt="deathnote" src={bookIcon} height="300" />
         <h>
           Book Name:
-          {props.booklisting[0]}
+          {booklisting[0]}
         </h>
         <p>
           Price:
-          {props.booklisting[1]}
+          {booklisting[1]}
         </p>
         <p1>
           Description:
-          {props.booklisting[2]}
+          {booklisting[2]}
         </p1>
         <br />
         <br />
         <p1>
           Location:
-          {props.booklisting[3]}
+          {booklisting[3]}
         </p1>
         <div className="InterestedButton">
           <InterestedButton />
@@ -101,14 +125,13 @@ BookListing.propTypes = {
   profileredirect: PropTypes.func,
   booklisting: PropTypes.array,
   username: PropTypes.string,
-
 };
 BookListing.defaultProps = {
   booksearch: pass(),
   profileredirect: pass(),
   mainredirect: pass(),
   booklisting: bookarr,
-  username: 'none',
+  username: "none",
 };
 
 export default BookListing;

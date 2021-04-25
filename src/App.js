@@ -1,24 +1,24 @@
-import './App.css';
-import React, { useState } from 'react';
-import Profile from './Profile';
-import Main from './Main';
-import Search from './Search';
-import BookListing from './BookListing';
-import Username from './Login';
+import "./App.css";
+import React, { useState } from "react";
+import Profile from "./Profile";
+import Main from "./Main";
+import Search from "./Search";
+import BookListing from "./BookListing";
+import Username from "./Login";
 
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 function App() {
   const [page, setpage] = useState(1);
   const [categories, setcategories] = useState([]);
   const [booklisting, setbooklisting] = useState([
-    'Python for beginners',
-    '200',
-    'its great',
+    "Python for beginners",
+    "200",
+    "its great",
   ]);
-  const [status, setStatus] = useState('Not Logged In');
+  const [status, setStatus] = useState("Not Logged In");
   function Clickhandler(book) {
-    fetch(`/booksearch/Computer Science/${book}`, { method: 'GET' })
+    fetch(`/booksearch/Computer Science/${book}`, { method: "GET" })
       .then((response) => response.json())
       .then((data) => setbooklisting(data[book]));
     console.log(booklisting);
@@ -28,8 +28,8 @@ function App() {
   function booksearch() {
     /* function that brings up categories of books when you click the magnifying glass
     on the main page */
-    fetch('/booksearch', {
-      method: 'GET',
+    fetch("/booksearch", {
+      method: "GET",
     })
       .then((response) => response.json())
       .then((data) => setcategories(data.bookcategories));
@@ -41,7 +41,7 @@ function App() {
   function mainredirect() {
     setpage(1);
   }
-  if (status === 'Not Logged In') return <Username function={setStatus} />;
+  if (status === "Not Logged In") return <Username function={setStatus} />;
   if (page === 1) {
     // If page is 1, main page
     return (

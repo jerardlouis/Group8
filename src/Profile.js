@@ -1,15 +1,22 @@
-import './Main.css';
-import PropTypes from 'prop-types';
-import React from 'react';
+import "./Main.css";
+import PropTypes from "prop-types";
+import React from "react";
 
 function pass() {}
 function Profile(props) {
-  const bookIcon = 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png';
+  const { mainredirect, booksearch, username } = props;
+  const bookIcon =
+    "https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png";
   return (
     <div className="Main">
       <div className="Header">
         <h />
-        <div onClick={props.mainredirect} role="button" tabIndex={0} onKeyPress={props.mainredirect}>
+        <div
+          onClick={mainredirect}
+          role="button"
+          tabIndex={0}
+          onKeyPress={mainredirect}
+        >
           <img
             alt="backbutton"
             className="backButton"
@@ -18,7 +25,12 @@ function Profile(props) {
             height="20"
           />
         </div>
-        <div onClick={props.booksearch} role="button" tabIndex={0}>
+        <div
+          onClick={booksearch}
+          role="button"
+          tabIndex={0}
+          onKeyPress={booksearch}
+        >
           <img
             alt="search"
             className="searchIcon"
@@ -44,7 +56,7 @@ function Profile(props) {
       </div>
 
       <div className="NewForYou">
-        <h>{props.username}</h>
+        <h>{username}</h>
         <p className="seeAll">
           <img
             alt="leave a review"
@@ -66,10 +78,34 @@ function Profile(props) {
         <h> Books by USERNAME </h>
       </div>
       <div className="bookFeed">
-        <img alt="book1" className="img1" src={bookIcon} height="100" width="100" />
-        <img alt="book2" className="img2" src={bookIcon} height="100" width="100" />
-        <img alt="book3" className="img3" src={bookIcon} height="100" width="100" />
-        <img alt="book4" className="img4" src={bookIcon} height="100" width="100" />
+        <img
+          alt="book1"
+          className="img1"
+          src={bookIcon}
+          height="100"
+          width="100"
+        />
+        <img
+          alt="book2"
+          className="img2"
+          src={bookIcon}
+          height="100"
+          width="100"
+        />
+        <img
+          alt="book3"
+          className="img3"
+          src={bookIcon}
+          height="100"
+          width="100"
+        />
+        <img
+          alt="book4"
+          className="img4"
+          src={bookIcon}
+          height="100"
+          width="100"
+        />
       </div>
     </div>
   );
@@ -79,12 +115,11 @@ Profile.propTypes = {
   booksearch: PropTypes.func,
   mainredirect: PropTypes.func,
   username: PropTypes.string,
-
 };
 Profile.defaultProps = {
   booksearch: pass(),
   mainredirect: pass(),
-  username: 'None',
+  username: "None",
 };
 
 export default Profile;

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import BookListing from './BookListing';
+import React, { useState } from "react";
+import BookListing from "./BookListing";
 
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 function Results(props) {
   const [booklisting, setbooklisting] = useState([]);
   const [page, setpage] = useState(4);
   function Clickhandler(book) {
-    fetch(`/booksearch/${props.category}/${book}`, { method: 'GET' })
+    fetch(`/booksearch/${props.category}/${book}`, { method: "GET" })
       .then((response) => response.json())
       .then((data) => setbooklisting(data[book]));
     setpage(5);
@@ -18,7 +18,14 @@ function Results(props) {
         <h1>
           <ul>
             {props.results.map((x) => (
-              <div onClick={() => Clickhandler(x)} role="button" tabIndex={0}><li>{x}</li></div>
+              <div
+                onClick={() => Clickhandler(x)}
+                onKeyPress={() => Clickhandler(x)}
+                role="button"
+                tabIndex={0}
+              >
+                <li>{x}</li>
+              </div>
             ))}
           </ul>
         </h1>

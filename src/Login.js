@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef } from "react";
+import PropTypes from "prop-types";
 
 function pass() {}
 export function Login(props) {
@@ -15,7 +15,7 @@ export function Login(props) {
   return (
     <div>
       <input ref={inputRef} type="text" />
-      <button type="button" onClick={Clicked}>
+      <button type="button" onClick={Clicked} onKeyPress={Clicked}>
         Login
       </button>
     </div>
@@ -24,7 +24,6 @@ export function Login(props) {
 
 Login.propTypes = {
   function: PropTypes.func,
-
 };
 Login.defaultProps = {
   function: pass(),
