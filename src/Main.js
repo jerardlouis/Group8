@@ -1,15 +1,22 @@
-import './Main.css';
-import PropTypes from 'prop-types';
-import React from 'react';
+import "./Main.css";
+import PropTypes from "prop-types";
+import React from "react";
 
 function pass() {}
 function Main(props) {
-  const bookIcon = 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png';
+  const { booksearch, profileredirect, Clickhandler } = props;
+  const bookIcon =
+    "https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png";
   return (
     <div className="Main">
       <div className="Header">
         <h>Books</h>
-        <div onClick={props.booksearch} role="button" tabIndex={0}>
+        <div
+          onClick={booksearch}
+          role="button"
+          tabIndex={0}
+          onKeyPress={booksearch}
+        >
           <img
             alt="searchIcon"
             className="searchIcon"
@@ -25,7 +32,12 @@ function Main(props) {
           width="20"
           height="20"
         />
-        <div onClick={props.profileredirect} role="button" tabIndex={0}>
+        <div
+          onClick={profileredirect}
+          role="button"
+          tabIndex={0}
+          onKeyPress={profileredirect}
+        >
           <img
             alt="profile"
             className="icon"
@@ -36,8 +48,12 @@ function Main(props) {
         </div>
       </div>
       <div className="HeaderButtons">
-        <button type="submit" className="button">Loan Book</button>
-        <button type="submit" className="button">Categories</button>
+        <button type="submit" className="button">
+          Loan Book
+        </button>
+        <button type="submit" className="button">
+          Categories
+        </button>
       </div>
 
       <div className="NewForYou">
@@ -59,8 +75,9 @@ function Main(props) {
       <div className="bookFeed">
         <div
           role="button"
-          onClick={() => props.Clickhandler('Python for beginners')}
+          onClick={() => Clickhandler("Python for beginners")}
           tabIndex={0}
+          onKeyPress={Clickhandler}
         >
           <img
             alt="book"
@@ -72,8 +89,9 @@ function Main(props) {
         </div>
         <div
           role="button"
-          onClick={() => props.Clickhandler('Python for beginners')}
+          onClick={() => Clickhandler("Python for beginners")}
           tabIndex={0}
+          onKeyPress={Clickhandler}
         >
           <img
             alt="book"
@@ -85,8 +103,9 @@ function Main(props) {
         </div>
         <div
           role="button"
-          onClick={() => props.Clickhandler('Python for beginners')}
+          onClick={() => Clickhandler("Python for beginners")}
           tabIndex={0}
+          onKeyPress={Clickhandler}
         >
           <img
             alt="book"
@@ -98,8 +117,9 @@ function Main(props) {
         </div>
         <div
           role="button"
-          onClick={() => props.Clickhandler('Python for beginners')}
+          onClick={() => Clickhandler("Python for beginners")}
           tabIndex={0}
+          onKeyPress={Clickhandler}
         >
           <img
             alt="book"
@@ -118,7 +138,6 @@ Main.propTypes = {
   booksearch: PropTypes.func,
   profileredirect: PropTypes.func,
   Clickhandler: PropTypes.func,
-
 };
 Main.defaultProps = {
   booksearch: pass(),

@@ -1,17 +1,17 @@
-import './App.css';
-import React, { useState } from 'react';
-import Results from './Results';
+import "./App.css";
+import React, { useState } from "react";
+import Results from "./Results";
 
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 function Search(props) {
   // Renders the search page based on the categories from the database
   const [page, setpage] = useState(3);
   const [results, setresults] = useState([]);
-  const [category, setcategory] = useState('none');
+  const [category, setcategory] = useState("none");
   function Clickhandler(categorys) {
     console.log(categorys);
-    fetch(`/booksearch/${categorys}`, { method: 'GET' })
+    fetch(`/booksearch/${categorys}`, { method: "GET" })
       .then((response) => response.json())
       .then((data) => setresults(data.results));
     // console.log(results);
@@ -23,7 +23,14 @@ function Search(props) {
       <div className="Main">
         <ul>
           {props.bookcategories.map((x) => (
-            <div onClick={() => Clickhandler(x)} role="button" tabIndex={0}><li>{x}</li></div>
+            <div
+              onClick={() => Clickhandler(x)}
+              role="button"
+              tabIndex={0}
+              onKeyPress={() => Clickhandler(x)}
+            >
+              <li>{x}</li>
+            </div>
           ))}
         </ul>
       </div>
@@ -32,7 +39,7 @@ function Search(props) {
   if (page === 4) {
     return (
       <Results results={results} category={category} />
-    /*  <div className="Main">
+      /*  <div className="Main">
       <h1>{<ul>{results.map(x => <li>{x}</li>)}</ul>}</h1>
       </div> */
     );

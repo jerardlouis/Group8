@@ -1,22 +1,24 @@
+'''Serves the bookbuster app'''
 import os
-from flask import Flask, send_from_directory, json, request
+from flask import Flask, send_from_directory  #json, request
 
-app = Flask(__name__, static_folder='./build/static')
+APP = Flask(__name__, static_folder='./build/static')
 
 
-@app.route('/', defaults={"filename": "index.html"})
-@app.route('/<path:filename>')
+@APP.route('/', defaults={"filename": "index.html"})
+@APP.route('/<path:filename>')
 def index(filename):
+    '''index'''
     return send_from_directory('./build', filename)
 
 
-bookcategories = ['Computer Science', 'History']
-results = {
+BOOKCATEGORIES = ['Computer Science', 'History']
+RESULTS = {
     "Computer Science": ["Python for beginners", "Data structures"],
     "History": ["A brand new world", "700 BC"]
 }
 
-booklisting = {
+BOOKLISTING = {
     "700 BC": ["700BC", "120$", "Its in good condition", "Newark"],
     "A brand new world":
     ["A brand new world", "120$", "Its in good condition", "Newark"],
@@ -27,22 +29,25 @@ booklisting = {
 }
 
 
-@app.route('/booksearch', methods=['GET'])
+@APP.route('/booksearch', methods=['GET'])
 def login():
-    if request.method == 'GET':
-        return {'bookcategories': bookcategories}
+    '''Responds with book categories'''
+    return {'bookcategories': BOOKCATEGORIES}
 
 
-@app.route('/booksearch/<category>', methods=['GET'])
+@APP.route('/booksearch/<category>', methods=['GET'])
 def searchresults(category):
-    return {"results": results[category]}
+    '''responds with results from category search'''
+    return {"results": RESULTS[category]}
 
 
-@app.route('/booksearch/<category>/<bookname>', methods=['GET'])
+@APP.route('/booksearch/<category>/<bookname>', methods=['GET'])
 def book(category, bookname):
-    return {bookname: booklisting[bookname]}
+    '''responds with book from a specific category'''
+    print(category)
+    return {bookname: BOOKLISTING[bookname]}
 
 
-app.run(host=os.getenv('IP', '0.0.0.0'),
+APP.run(host=os.getenv('IP', '0.0.0.0'),
         port=8081 if os.getenv('C9_PORT') else int(os.getenv('PORT', 8081)),
         debug=True)
