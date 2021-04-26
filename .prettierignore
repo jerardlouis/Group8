@@ -1,0 +1,4 @@
+# Ignore artifacts:
+reportWebVitals
+setupTests
+App.test
