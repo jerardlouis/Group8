@@ -1,11 +1,11 @@
-import "./Main.css";
-import "./components/InterestedButton.css";
-import React from "react";
-import PropTypes from "prop-types";
-import { InterestedButton } from "./components/InterestedButton";
+import './Main.css';
+import './components/InterestedButton.css';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { InterestedButton } from './components/InterestedButton';
 
 function pass() {}
-const bookarr = ["No", "Books", "Here", "Now"];
+const bookarr = ['No', 'Books', 'Here', 'Now'];
 
 function BookListing(props) {
   const {
@@ -15,8 +15,7 @@ function BookListing(props) {
     profileredirect,
     mainredirect,
   } = props;
-  const bookIcon =
-    "https://images-na.ssl-images-amazon.com/images/I/71Pryq-7E-L._SL1012_.jpg";
+  const bookIcon = 'https://images-na.ssl-images-amazon.com/images/I/71Pryq-7E-L._SL1012_.jpg';
   return (
     <div className="Main">
       <div className="Header">
@@ -131,7 +130,7 @@ BookListing.defaultProps = {
   profileredirect: pass(),
   mainredirect: pass(),
   booklisting: bookarr,
-  username: "none",
+  username: 'none',
 };
 
 export default BookListing;

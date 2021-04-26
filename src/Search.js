@@ -1,17 +1,17 @@
-import "./App.css";
-import React, { useState } from "react";
-import Results from "./Results";
+import './App.css';
+import React, { useState } from 'react';
+import Results from './Results';
 
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 
 function Search(props) {
   // Renders the search page based on the categories from the database
   const [page, setpage] = useState(3);
   const [results, setresults] = useState([]);
-  const [category, setcategory] = useState("none");
+  const [category, setcategory] = useState('none');
   function Clickhandler(categorys) {
     console.log(categorys);
-    fetch(`/booksearch/${categorys}`, { method: "GET" })
+    fetch(`/booksearch/${categorys}`, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => setresults(data.results));
     // console.log(results);
