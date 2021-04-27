@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 export function Login(props) {
   const inputRef = useRef(null);
   function Clicked() {
@@ -12,7 +12,9 @@ export function Login(props) {
   return (
     <div>
       <input ref={inputRef} type="text" />
-      <button type="button" onClick={Clicked}>Login</button>
+      <button type="button" onClick={Clicked}>
+        Login
+      </button>
     </div>
   );
 }

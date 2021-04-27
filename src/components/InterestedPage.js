@@ -12,6 +12,7 @@ export default class InterestedPage extends Component {
   state = {
     showMessage: false,
   };
+
   onButtonClickHandler = () => {
     this.setState({ showMessage: true });
   };
@@ -29,6 +30,7 @@ export default class InterestedPage extends Component {
     );
     e.target.reset();
   }
+
   render() {
     return (
       <div>
@@ -70,7 +72,7 @@ export default class InterestedPage extends Component {
                 name="message"
               />
             </div>
-            <div className="msg"></div>
+            <div className="msg" />
             <div className="btn">
               {this.state.showMessage && <p>Request has been Submitted!</p>}
               <button onClick={this.onButtonClickHandler} type="submit">

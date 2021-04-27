@@ -1,21 +1,24 @@
-import './Main.css';
-import './components/InterestedButton.css';
-import { InterestedButton } from './components/InterestedButton.js';
+import "./Main.css";
+import "./components/InterestedButton.css";
+import { InterestedButton } from "./components/InterestedButton.js";
 
 function BookListing(props) {
-  var bookIcon = 'https://images-na.ssl-images-amazon.com/images/I/71Pryq-7E-L._SL1012_.jpg';
+  var bookIcon =
+    "https://images-na.ssl-images-amazon.com/images/I/71Pryq-7E-L._SL1012_.jpg";
   return (
     <div className="Main">
       <div className="Header">
         <h></h>
         <img
           className="backButton"
-          src="https://static.thenounproject.com/png/344330-200.png" onClick = {props.mainredirect}
+          src="https://static.thenounproject.com/png/344330-200.png"
+          onClick={props.mainredirect}
           width="20"
           height="20"
         />
         <img
-          className="searchIcon" onClick = {props.booksearch}
+          className="searchIcon"
+          onClick={props.booksearch}
           src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/194_Instagram_Search_Sets-512.png"
           width="20"
           height="20"
@@ -27,7 +30,8 @@ function BookListing(props) {
           height="20"
         />
         <img
-          className="icon" onClick = {props.profileredirect}
+          className="icon"
+          onClick={props.profileredirect}
           src="https://static.thenounproject.com/png/630740-200.png"
           width="20"
           height="20"
@@ -44,7 +48,11 @@ function BookListing(props) {
           />
           5 stars
         </p>
-        <img src="https://static.thenounproject.com/png/630740-200.png" height="60" width="60" />
+        <img
+          src="https://static.thenounproject.com/png/630740-200.png"
+          height="60"
+          width="60"
+        />
         <p>LOCATION</p>
       </div>
       <div className="Listing">
