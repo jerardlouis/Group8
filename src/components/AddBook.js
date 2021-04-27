@@ -1,13 +1,13 @@
 import React from 'react';
-
+const fetch = require("node-fetch")
 class AddBook extends React.Component {
   state = {
     name: '',
     price: '',
-    desc: '',
+    desc: ''
   };
 
-  handleAddBook = (e) => {
+  handleAddBook = e => {
     e.preventDefault();
     fetch('http://localhost:8081/addbook', {
       method: 'POST',
@@ -15,42 +15,55 @@ class AddBook extends React.Component {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST, PUT, DELETE, GET, OPTIONS',
         'Access-Control-Request-Method': '*',
-        'Access-Control-Allow-Headers':
-          'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
       },
       body: JSON.stringify({
         name: this.state.name,
         price: this.state.price,
-        desc: this.state.desc,
-      }),
-    }).then((response) => {
-      console.log(response);
+        desc: this.state.desc
+      })
+    }).then(response => {
+        console.log(response);
+      })
+     
+  };
+
+  handlenameChange = e => {
+    this.setState({
+      name: e.target.value
     });
   };
 
-  handlenameChange = (e) => {
+  handlepriceChange = e => {
     this.setState({
-      name: e.target.value,
+      price: e.target.value
     });
   };
-
-  handlepriceChange = (e) => {
+  handledescChange = e => {
     this.setState({
-      price: e.target.value,
-    });
-  };
-  handledescChange = (e) => {
-    this.setState({
-      desc: e.target.value,
+      desc: e.target.value
     });
   };
 
   render() {
     return (
+      
       <form onSubmit={this.handleSubmit}>
+        <img
+          className="backButton"
+          onClick={this.props.mainredirect}
+          src="https://static.thenounproject.com/png/344330-200.png"
+          width="20"
+          height="20"
+        />
         Book Name:
         <br />
-        <input type="text" name="name" value={this.state.name} onChange={this.handlenameChange} />
+        <input
+          type="text"
+          name="name"
+          value={this.state.name}
+          onChange={this.handlenameChange}
+        />
         <br />
         Price:
         <br />
@@ -64,7 +77,12 @@ class AddBook extends React.Component {
         <br />
         Description:
         <br />
-        <input type="text" name="desc" value={this.state.desc} onChange={this.handledescChange} />
+        <input
+          type="text"
+          name="desc"
+          value={this.state.desc}
+          onChange={this.handledescChange}
+        />
         <br />
         <button onClick={this.handleAddBook}>Add Book</button>
       </form>
