@@ -1,3 +1,4 @@
+
 import "./App.css";
 import Profile from "./Profile.js";
 import Main from "./Main.js";
@@ -13,13 +14,13 @@ function App() {
   const [page, setpage] = useState(1);
   const [categories, setcategories] = useState([]);
   const [booklisting, setbooklisting] = useState([
-    "Python for beginners",
-    "200",
-    "its great",
+    'Python for beginners',
+    '200',
+    'its great',
   ]);
-  const [status, setStatus] = useState("Not Logged In");
+  const [status, setStatus] = useState('Not Logged In');
   function Clickhandler(book) {
-    fetch("/booksearch/" + "Computer Science" + "/" + book, { method: "GET" })
+    fetch(`/booksearch/Computer Science/${book}`, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => setbooklisting(data[book]));
     console.log(booklisting);
@@ -27,13 +28,13 @@ function App() {
   }
 
   function booksearch() {
-    /*function that brings up categories of books when you click the magnifying glass
-    on the main page*/
-    fetch("/booksearch", {
-      method: "GET",
+    /* function that brings up categories of books when you click the magnifying glass
+    on the main page */
+    fetch('/booksearch', {
+      method: 'GET',
     })
       .then((response) => response.json())
-      .then((data) => setcategories(data["bookcategories"]));
+      .then((data) => setcategories(data.bookcategories));
     setpage(3);
   }
   function profileredirect() {
@@ -93,6 +94,7 @@ function App() {
         />
       </div>
     );
+
   }
   if (page === 6){
     return(
