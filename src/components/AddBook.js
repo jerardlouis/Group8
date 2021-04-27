@@ -48,6 +48,13 @@ class AddBook extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <img
+          className="backButton"
+          onClick={this.props.mainredirect}
+          src="https://static.thenounproject.com/png/344330-200.png"
+          width="20"
+          height="20"
+        />
         Book Name:
         <br />
         <input type="text" name="name" value={this.state.name} onChange={this.handlenameChange} />
