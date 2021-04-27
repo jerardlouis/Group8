@@ -1,12 +1,11 @@
-import "./Main.css";
-import PropTypes from "prop-types";
-import React from "react";
+import './Main.css';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 function pass() {}
 function Profile(props) {
   const { mainredirect, booksearch, username } = props;
-  const bookIcon =
-    "https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png";
+  const bookIcon = 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png';
   return (
     <div className="Main">
       <div className="Header">
@@ -119,7 +118,7 @@ Profile.propTypes = {
 Profile.defaultProps = {
   booksearch: pass(),
   mainredirect: pass(),
-  username: "None",
+  username: 'None',
 };
 
 export default Profile;

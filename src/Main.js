@@ -1,12 +1,11 @@
-import "./Main.css";
-import PropTypes from "prop-types";
-import React from "react";
+import './Main.css';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 function pass() {}
 function Main(props) {
   const { booksearch, profileredirect, Clickhandler } = props;
-  const bookIcon =
-    "https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png";
+  const bookIcon = 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png';
   return (
     <div className="Main">
       <div className="Header">
@@ -75,7 +74,7 @@ function Main(props) {
       <div className="bookFeed">
         <div
           role="button"
-          onClick={() => Clickhandler("Python for beginners")}
+          onClick={() => Clickhandler('Python for beginners')}
           tabIndex={0}
           onKeyPress={Clickhandler}
         >
@@ -89,7 +88,7 @@ function Main(props) {
         </div>
         <div
           role="button"
-          onClick={() => Clickhandler("Python for beginners")}
+          onClick={() => Clickhandler('Python for beginners')}
           tabIndex={0}
           onKeyPress={Clickhandler}
         >
@@ -103,7 +102,7 @@ function Main(props) {
         </div>
         <div
           role="button"
-          onClick={() => Clickhandler("Python for beginners")}
+          onClick={() => Clickhandler('Python for beginners')}
           tabIndex={0}
           onKeyPress={Clickhandler}
         >
@@ -117,7 +116,7 @@ function Main(props) {
         </div>
         <div
           role="button"
-          onClick={() => Clickhandler("Python for beginners")}
+          onClick={() => Clickhandler('Python for beginners')}
           tabIndex={0}
           onKeyPress={Clickhandler}
         >
