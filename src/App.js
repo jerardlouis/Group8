@@ -1,14 +1,13 @@
+import './App.css';
+import React, { useState } from 'react';
+import Profile from './Profile';
+import Main from './Main';
+import Search from './Search';
+import BookListing from './BookListing';
+import Username from './Login';
+import AddBook from './components/AddBook';
 
-import "./App.css";
-import Profile from "./Profile.js";
-import Main from "./Main.js";
-import Search from "./Search.js";
-import React, { useState } from "react";
-import BookListing from "./BookListing.js";
-import Username from "./Login";
-import AddBook from "./components/AddBook.js"
-
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 
 function App() {
   const [page, setpage] = useState(1);
@@ -43,13 +42,12 @@ function App() {
   function mainredirect() {
     setpage(1);
   }
-  function addbook(){
-    console.log("click");
+  function addbook() {
+    console.log('click');
     setpage(6);
   }
-  if (status === "Not Logged In") return <Username function={setStatus} />;
+  if (status === 'Not Logged In') return <Username function={setStatus} />;
   if (page === 1) {
-    //If page is 1, main page
     return (
       <div className="App">
         <Main
@@ -62,7 +60,6 @@ function App() {
     );
   }
   if (page === 3) {
-    //if page is 3, search page
     return (
       <div className="App">
         <Search bookcategories={categories} />
@@ -70,7 +67,6 @@ function App() {
     );
   }
   if (page === 2) {
-    //if page is 3, search page
     return (
       <div className="App">
         <Profile
@@ -82,7 +78,6 @@ function App() {
     );
   }
   if (page === 5) {
-    //if page is 3, search page
     return (
       <div className="App">
         <BookListing
@@ -96,12 +91,12 @@ function App() {
     );
 
   }
-  if (page === 6){
-    return(
+  if (page === 6) {
+    return (
       <div className="App">
         <AddBook mainredirect={mainredirect} />
       </div>
-    )
+    );
   }
 }
 export default App;
