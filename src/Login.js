@@ -15,12 +15,10 @@ export function Login(props) {
   return (
     <div>
       <p>Landing Page</p>
-      <br></br>
       <input placeholder="Username" ref={inputRef} type="text" />
       <button type="button" onClick={Clicked}>
         Login
       </button>
-      
     </div>
   );
 }

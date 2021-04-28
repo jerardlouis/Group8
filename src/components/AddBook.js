@@ -1,10 +1,12 @@
 import React from 'react';
-const fetch = require("node-fetch")
+
+const fetch = require('node-fetch');
+
 class AddBook extends React.Component {
   state = {
     name: '',
     price: '',
-    desc: ''
+    desc: '',
   };
 
   handleAddBook = e => {
@@ -15,42 +17,43 @@ class AddBook extends React.Component {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST, PUT, DELETE, GET, OPTIONS',
         'Access-Control-Request-Method': '*',
-        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
       },
       body: JSON.stringify({
         name: this.state.name,
         price: this.state.price,
-        desc: this.state.desc
-      })
+        desc: this.state.desc,
+      }),
     }).then(response => {
-        console.log(response);
-      })
-     
+      console.log(response);
+    });
+
   };
 
   handlenameChange = e => {
     this.setState({
-      name: e.target.value
+      name: e.target.value,
     });
   };
 
   handlepriceChange = e => {
     this.setState({
-      price: e.target.value
+      price: e.target.value,
     });
   };
   handledescChange = e => {
     this.setState({
-      desc: e.target.value
+      desc: e.target.value,
     });
   };
 
   render() {
     return (
-      
+
       <form onSubmit={this.handleSubmit}>
         <img
           className="backButton"
+          alt="backbutton"
           onClick={this.props.mainredirect}
           src="https://static.thenounproject.com/png/344330-200.png"
           width="20"
