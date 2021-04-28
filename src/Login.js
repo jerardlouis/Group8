@@ -14,8 +14,9 @@ export function Login(props) {
 
   return (
     <div>
-      <input ref={inputRef} type="text" />
-      <button type="button" onClick={Clicked} onKeyPress={Clicked}>
+      <p>Landing Page</p>
+      <input placeholder="Username" ref={inputRef} type="text" />
+      <button type="button" onClick={Clicked}>
         Login
       </button>
     </div>
