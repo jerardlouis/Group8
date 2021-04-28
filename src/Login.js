@@ -19,7 +19,7 @@ export function Login(props) {
 
   return (
     <div>
-      <p>Landing Page...</p>
+      <p>Landing Page</p>
       <h2>Login using Google OAuth</h2>
       <GoogleLogin
           clientId="67682372412-o04q4pmnj9cufpdne7jvt9hlf45nef0u.apps.googleusercontent.com" 
