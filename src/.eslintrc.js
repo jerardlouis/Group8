@@ -10,7 +10,7 @@ module.exports = {
     'InterestedPage.js',
     'AddBook.js',
     //'BookListing.js',
-    //'Login.js',
+    'Login.js',
     'Main.js',
     //'Profile.js',
     //'Results.js',
