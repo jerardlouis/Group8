@@ -20,19 +20,19 @@ function Search(props) {
   }
   if (page === 3) {
     return (
-      <div className="Main">
-        <ul>
+      <div className="search-page">
+        <h2>Select the Category of books</h2>
           {props.bookcategories.map((x) => (
-            <div
-              onClick={() => Clickhandler(x)}
-              role="button"
-              tabIndex={0}
-              onKeyPress={() => Clickhandler(x)}
-            >
-              <li>{x}</li>
+            <div className="search-field">
+              <button
+                onClick={() => Clickhandler(x)}
+                role="button"
+                tabIndex={0}
+                onKeyPress={() => Clickhandler(x)}
+              > {x} </button>
             </div>
           ))}
-        </ul>
+        
       </div>
     );
   }
