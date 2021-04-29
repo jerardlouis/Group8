@@ -6,12 +6,14 @@ import Search from './Search';
 import BookListing from './BookListing';
 import Username from './Login';
 import Loan from './Loan';
-
+import Results from './Results.js'
 const fetch = require('node-fetch');
 
 function App() {
   const [page, setpage] = useState(1);
   const [categories, setcategories] = useState([]);
+  const [results, setresults] = useState([]);
+  const [category, setcategory] = useState('none');
   const [booklisting, setbooklisting] = useState([
     'Python for beginners',
     '200',
@@ -24,6 +26,21 @@ function App() {
       .then((data) => setbooklisting(data[book]));
     console.log(booklisting);
     setpage(5);
+  }
+  function resulthandler(categorys) {
+    console.log(categorys);
+    fetch(`/booksearch/${categorys}`, { method: 'GET' })
+      .then((response) => response.json())
+      .then((data) => setresults(data.results));
+    // console.log(results);
+    setcategory(categorys);
+    setpage(4);
+  }
+  function booklistinghandler(book) {
+    fetch(`/booksearch/${category}/${book}`, { method: 'GET' })
+      .then((response) => response.json())
+      .then((data) => setbooklisting(data[book]));
+      setpage(5)
   }
   function loanbook(){
     setpage(6);
@@ -62,7 +79,15 @@ function App() {
     // if page is 3, search page
     return (
       <div className="App">
-        <Search bookcategories={categories} />
+        <Search bookcategories={categories} resulthandler = {resulthandler}/>
+      </div>
+    );
+  }
+  if (page === 4) {
+    // if page is 3, results page
+    return (
+      <div className="App">
+        <Results results={results}  booklistinghandler = {booklistinghandler} />
       </div>
     );
   }

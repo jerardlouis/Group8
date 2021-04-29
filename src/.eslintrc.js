@@ -14,8 +14,8 @@ module.exports = {
     //'Login.js',
     'Main.js',
     //'Profile.js',
-    //'Results.js',
-    //'Search.js',
+    'Results.js',
+    'Search.js',
   ],
   rules: {
     "react/no-array-index-key": "off",
