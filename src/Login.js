@@ -1,6 +1,7 @@
 import React, {useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import {GoogleLogin} from 'react-google-login';
+import './Login.css';
 
 function pass() {}
 export function Login(props) {
@@ -19,8 +20,24 @@ export function Login(props) {
 
   return (
     <div>
-      <p>Landing Page</p>
-      <h2>Login using Google OAuth</h2>
+      <h1>Book Busters</h1>
+      <h2>
+        No Longer Need That One Book?
+      </h2>
+      <h3>Book Busters has you covered! We are a customer satisfaction driven team. 
+        We make it easier for NJIT students to sell and buy books with other 
+        students. 
+      </h3>
+      <h4>
+        Meet the Team!
+      </h4>
+      <h5>
+        We are all Computer Science Majors in our senior year at NJIT
+      </h5>
+      <h6>
+      Descartes Duval-Autus &emsp; Julio Rojas &emsp; Mohammad Khan &emsp; Jerard Dayanghirang Guevarra                
+      </h6>
+      <div className="google">
       <GoogleLogin
           clientId="67682372412-o04q4pmnj9cufpdne7jvt9hlf45nef0u.apps.googleusercontent.com" 
           buttonText="Login with Google"
@@ -28,6 +45,7 @@ export function Login(props) {
           onFailure={responseGoogleFailed}
           cookiePolicy={'single_host_origin'}
       />
+      </div>
       {
         error?(<div> Something Went Wrong! Try again. </div> ) : <></>
       }
