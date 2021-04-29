@@ -15,7 +15,7 @@ function BookListing(props) {
     profileredirect,
     mainredirect,
   } = props;
-  const bookIcon = 'https://images-na.ssl-images-amazon.com/images/I/71Pryq-7E-L._SL1012_.jpg';
+  const bookIcon = 'https://images-na.ssl-images-amazon.com/images/I/51iuMlvNUxL.jpg';
   return (
     <div className="Main">
       <div className="Header">
