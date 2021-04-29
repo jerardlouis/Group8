@@ -37,6 +37,7 @@ export default class InterestedPage extends Component {
         <Link to="/">
           <button>Return</button>
         </Link>
+
         <div className="container">
           <form onSubmit={this.sendEmail}>
             <div className="SingleItem">
