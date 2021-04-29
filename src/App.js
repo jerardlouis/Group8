@@ -5,6 +5,7 @@ import Main from './Main';
 import Search from './Search';
 import BookListing from './BookListing';
 import Username from './Login';
+import Loan from './Loan';
 
 const fetch = require('node-fetch');
 
@@ -24,7 +25,9 @@ function App() {
     console.log(booklisting);
     setpage(5);
   }
-
+  function loanbook(){
+    setpage(6);
+  }
   function booksearch() {
     /* function that brings up categories of books when you click the magnifying glass
     on the main page */
@@ -50,6 +53,7 @@ function App() {
           booksearch={booksearch}
           profileredirect={profileredirect}
           Clickhandler={Clickhandler}
+          loanbook = {loanbook}
         />
       </div>
     );
@@ -85,6 +89,15 @@ function App() {
           profileredirect={profileredirect}
           mainredirect={mainredirect}
         />
+      </div>
+    );
+  }
+  if (page === 6) {
+    // If page is 1, main page
+    return (
+      <div className="App">
+        <Loan
+        mainredirect={mainredirect}/>
       </div>
     );
   }

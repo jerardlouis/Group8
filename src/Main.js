@@ -4,7 +4,7 @@ import React from 'react';
 
 function pass() {}
 function Main(props) {
-  const { booksearch, profileredirect, Clickhandler } = props;
+  const { booksearch, profileredirect, Clickhandler, loanbook } = props;
   const bookIcon = 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png';
   return (
     <div className="Main">
@@ -47,7 +47,7 @@ function Main(props) {
         </div>
       </div>
       <div className="HeaderButtons">
-        <button type="submit" className="button">
+        <button type="submit" className="button" onClick = {loanbook}>
           Loan Book
         </button>
         <button type="submit" className="button">
@@ -137,11 +137,13 @@ Main.propTypes = {
   booksearch: PropTypes.func,
   profileredirect: PropTypes.func,
   Clickhandler: PropTypes.func,
+  loanbook : PropTypes.func
 };
 Main.defaultProps = {
   booksearch: pass(),
   profileredirect: pass(),
   Clickhandler: pass(),
+  loanbook: pass(),
 };
 
 export default Main;
