@@ -20,7 +20,7 @@ export function Login(props) {
 
   return (
     <div>
-      <h1>Book Busters</h1>
+      <h1>Book Busters <img src="https://www.imgonline.com.ua/result_img/imgonline-com-ua-Transparent-background-R6f5FNJZZNKH.png" alt="" height="45" width="65" /></h1>
       <h2>
         No Longer Need That One Book?
       </h2>
