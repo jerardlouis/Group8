@@ -15,19 +15,22 @@ function Results(props) {
   if (page === 4) {
     return (
       <div className="result-page">
-        <h2>Books result for {props.category} </h2>
-            {props.results.map((x) => (
-              <div className="book-list">
-              <button
-                onClick={() => Clickhandler(x)}
-                onKeyPress={() => Clickhandler(x)}
-                role="button"
-                tabIndex={0}
-              >
-                {x}
-              </button>
-              </div>
-            ))}
+        <h2>
+          Books result for
+          {props.category}
+        </h2>
+        {props.results.map((x) => (
+          <div className="book-list">
+            <button
+              onClick={() => Clickhandler(x)}
+              onKeyPress={() => Clickhandler(x)}
+              type="button"
+              tabIndex={0}
+            >
+              {x}
+            </button>
+          </div>
+        ))}
       </div>
     );
   }
