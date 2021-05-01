@@ -1,35 +1,35 @@
-import React, {useState, useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {GoogleLogin} from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 
 function pass() {}
 export function Login(props) {
   const [error, seterror] = useState(false);
 
   function responseGoogle(res) {
-    let profile = res.profileObj;
+    const profile = res.profileObj;
     props.function(profile.name);
     // props.setmail(profile.email); // to set email
     // props.setimg_url(profile.imageUrl); // to set image url
-    console.log(profile.name);
+    // console.log(profile.name);
   }
-  function responseGoogleFailed(){
+  function responseGoogleFailed() {
     seterror(true);
   }
 
   return (
     <div>
-      <p>Landing Page</p>
+
       <h2>Login using Google OAuth</h2>
       <GoogleLogin
-          clientId="67682372412-o04q4pmnj9cufpdne7jvt9hlf45nef0u.apps.googleusercontent.com" 
-          buttonText="Login with Google"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogleFailed}
-          cookiePolicy={'single_host_origin'}
+        clientId="67682372412-o04q4pmnj9cufpdne7jvt9hlf45nef0u.apps.googleusercontent.com"
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogleFailed}
+        cookiePolicy="single_host_origin"
       />
       {
-        error?(<div> Something Went Wrong! Try again. </div> ) : <></>
+        error ? (<div> Something Went Wrong! Try again. </div>) : <></>
       }
     </div>
   );
