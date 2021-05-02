@@ -1,22 +1,47 @@
-import React, { useRef } from "react";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { GoogleLogin } from 'react-google-login';
+import './App.css';
+
+function pass() {}
 export function Login(props) {
-  const inputRef = useRef(null);
-  function Clicked() {
-    if (inputRef != null) {
-      const message = inputRef.current.value;
-      console.log(message);
-      props.function(message);
-    }
+  const [error, seterror] = useState(false);
+
+  function responseGoogle(res) {
+    const profile = res.profileObj;
+    props.function(profile.name);
+    // props.setmail(profile.email); // to set email
+    // props.setimg_url(profile.imageUrl); // to set image url
+    // console.log(profile.name);
+  }
+  function responseGoogleFailed() {
+    seterror(true);
   }
 
   return (
-    <div>
-      <input ref={inputRef} type="text" />
-      <button type="button" onClick={Clicked}>
-        Login
-      </button>
+    <div className="login">
+      <h1>Welcome to BookBuster</h1>
+      <i>-- Best place to find your book --</i>
+      <h2>Login using Google OAuth</h2>
+      <GoogleLogin
+        clientId="67682372412-o04q4pmnj9cufpdne7jvt9hlf45nef0u.apps.googleusercontent.com"
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogleFailed}
+        cookiePolicy="single_host_origin"
+      />
+      {
+        error ? (<div> Something Went Wrong! Try again. </div>) : <></>
+      }
     </div>
   );
 }
+
+Login.propTypes = {
+  function: PropTypes.func,
+};
+Login.defaultProps = {
+  function: pass(),
+};
 
 export default Login;
