@@ -2,6 +2,24 @@
   text-align: center;
 }
 
+/* ------- login ------- */
+.login{
+  margin-top: 20px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login > h2{
+  margin: 30px auto;
+  border-bottom: 2px solid;
+}
+.login > h1{
+  background-color: rgba(0, 0, 0, 0.171);
+  padding: 5px 15px;
+  border-radius: 15px ;
+}
+
 /* ------- Search Page CSS -------- */
 .search-page .result-page{
   margin-top: 10px;
