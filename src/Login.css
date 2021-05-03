@@ -1,0 +1,102 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+h1 {
+  background-color: rgb(59, 89, 152);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-bottom: 50px;
+  font-style: italic;
+  box-shadow: 1px 1px 4px 1px;
+  font-size: 40px;
+  color:whitesmoke;
+}
+h2 {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: rgb(59, 89, 152);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  box-shadow: 1px 1px 4px 1px;
+  font-size: 40px;
+  color:whitesmoke;
+}
+h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(59, 89, 152);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  box-shadow: 1px 1px 4px 1px;
+  font-size: 40px;
+  color:whitesmoke;
+  font-size: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+h4 {
+  padding-bottom: 5px;
+  background-color: rgb(59, 89, 152);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  box-shadow: 1px 1px 4px 1px;
+  font-size: 50px;
+  color:whitesmoke;
+  padding-top: 40px;
+}
+h5 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(59, 89, 152);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  box-shadow: 1px 1px 4px 1px;
+  font-size: 40px;
+  color:whitesmoke;
+  font-size: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+h6 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: rgb(59, 89, 152);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  box-shadow: 1px 1px 4px 1px;
+  font-size: 20px;
+  color:whitesmoke;
+  font-size: 40px;
+}
+
+.google {
+    background-color: rgb(59, 89, 152);
+    margin: 250px auto;
+    padding: 20px;
+    width: 25%;
+    box-shadow: 1px 1px 4px 1px;
+    text-align: center;
+    border: 1px solid transparent;
+    outline: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.google:hover {
+  border: 1px solid darkblue;
+  background-color: rgb(95, 132, 219);
+}
+
+img {
+  margin-bottom: -5px;
+  margin-left: 5px;
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
 
+
 function pass() {}
 export function Login(props) {
   const [error, seterror] = useState(false);
@@ -18,10 +19,7 @@ export function Login(props) {
   }
 
   return (
-    <div className="login">
-      <h1>Welcome to BookBuster</h1>
-      <i>-- Best place to find your book --</i>
-      <h2>Login using Google OAuth</h2>
+
       <GoogleLogin
         clientId="67682372412-o04q4pmnj9cufpdne7jvt9hlf45nef0u.apps.googleusercontent.com"
         buttonText="Login with Google"
@@ -29,6 +27,7 @@ export function Login(props) {
         onFailure={responseGoogleFailed}
         cookiePolicy="single_host_origin"
       />
+      </div>
       {
         error ? (<div> Something Went Wrong! Try again. </div>) : <></>
       }
