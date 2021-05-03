@@ -10,7 +10,7 @@ function Search(props) {
   const [results, setresults] = useState([]);
   const [category, setcategory] = useState('none');
   function Clickhandler(categorys) {
-    console.log(categorys);
+    // console.log(categorys);
     fetch(`/booksearch/${categorys}`, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => setresults(data.results));
@@ -20,19 +20,24 @@ function Search(props) {
   }
   if (page === 3) {
     return (
-      <div className="Main">
-        <ul>
-          {props.bookcategories.map((x) => (
-            <div
+      <div className="search-page">
+        <h2>Select the Category of books</h2>
+        {props.bookcategories.map((x) => (
+          <div className="search-field">
+            <button
               onClick={() => Clickhandler(x)}
-              role="button"
+              type="button"
               tabIndex={0}
               onKeyPress={() => Clickhandler(x)}
             >
-              <li>{x}</li>
-            </div>
-          ))}
-        </ul>
+              {' '}
+              {x}
+              {' '}
+
+            </button>
+          </div>
+        ))}
+
       </div>
     );
   }
