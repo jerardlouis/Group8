@@ -7,3 +7,9 @@ test("renders loan book button", () => {
   const linkElement = screen.getByText(/Loan Book/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test("renders Categories button", () => {
+  render(<Main />);
+  const linkElement = screen.getByText(/Categories/i);
+  expect(linkElement).toBeInTheDocument();
+});
