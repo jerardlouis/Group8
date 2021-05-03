@@ -74,7 +74,8 @@ function Profile(props) {
         <p>LOCATION</p>
       </div>
       <div className="feedHeader">
-        <h> Books by USERNAME </h>
+        <h> Books by:  </h>
+        <h>{username}</h>
       </div>
       <div className="bookFeed">
         <img
