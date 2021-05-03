@@ -46,18 +46,16 @@ testing = []
 testing1 = {}
 templ = []
 
-def getResults(): 
 #loop through categories
-    for category in DB.session.query(Book.category).all():  #loop through categories
-    #for each book in that category append it to a list
-        for bookname in DB.session.query(Book.bookname).filter(Book.category == category.category).all(): 
-            templ.append(bookname.bookname)
-        testing1[category.category] = templ     #map category name to list of books
-        templ = []
+for category in DB.session.query(Book.category).all():  #
+    for bookname in DB.session.query(Book.bookname).filter(Book.category == category.category).all():
+        templ.append(bookname.bookname)
+    testing1[category.category] = templ
+    templ = []
 
-print(getResults())
+#print(testing1)
 #print(list(testing1))
-#print(list(DB.session.query(Book.bookname).filter(Book.category == 'History').all()))
+print(list(DB.session.query(Book.bookname).filter(Book.category == 'History').all()))
 #print(DB.session.query(Book.bookname).filter(Book.category == 'History').all()
     
 #print(testing)

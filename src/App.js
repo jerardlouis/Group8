@@ -7,6 +7,8 @@ import BookListing from './BookListing';
 import Username from './Login';
 import Loan from './Loan';
 import Results from './Results.js'
+import AddBook from './components/AddBook';
+
 const fetch = require('node-fetch');
 
 function App() {
@@ -43,7 +45,7 @@ function App() {
       setpage(5)
   }
   function loanbook(){
-    setpage(6);
+    setpage(7);
   }
   function booksearch() {
     /* function that brings up categories of books when you click the magnifying glass
@@ -61,9 +63,12 @@ function App() {
   function mainredirect() {
     setpage(1);
   }
+  function addbook() {
+    console.log('click');
+    setpage(6);
+  }
   if (status === 'Not Logged In') return <Username function={setStatus} />;
   if (page === 1) {
-    // If page is 1, main page
     return (
       <div className="App">
         <Main
@@ -71,12 +76,13 @@ function App() {
           profileredirect={profileredirect}
           Clickhandler={Clickhandler}
           loanbook = {loanbook}
+          addbook={addbook}
+
         />
       </div>
     );
   }
   if (page === 3) {
-    // if page is 3, search page
     return (
       <div className="App">
         <Search bookcategories={categories} resulthandler = {resulthandler}/>
@@ -92,7 +98,6 @@ function App() {
     );
   }
   if (page === 2) {
-    // if page is 2, profile page
     return (
       <div className="App">
         <Profile
@@ -104,7 +109,6 @@ function App() {
     );
   }
   if (page === 5) {
-    // if page is 5, booklisting page
     return (
       <div className="App">
         <BookListing
@@ -118,7 +122,13 @@ function App() {
     );
   }
   if (page === 6) {
-    // If page is 1, main page
+    return (
+      <div className="App">
+        <AddBook mainredirect={mainredirect} />
+      </div>
+    );
+  }
+  if (page === 7) {
     return (
       <div className="App">
         <Loan
