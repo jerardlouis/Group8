@@ -1,6 +1,6 @@
 '''Serves the bookbuster app'''
 import os
-from flask import Flask, send_from_directory  #json, request
+from flask import Flask, send_from_directory,request  #json, request
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
@@ -113,6 +113,13 @@ def book(category, bookname):
     for row in BOOKLISTING:
         if row[0] == bookname:
             return {bookname: row}
+
+@APP.route('/loan', methods=['POST'])
+def loan():
+    print(request.data)
+    '''responds with results from category search'''
+    
+   
 
 if __name__ == "__main__":
     APP.run(host=os.getenv('IP', '0.0.0.0'),
