@@ -6,6 +6,7 @@ const fetch = require('node-fetch');
 
 function pass() {}
 function Main(props) {
+  //const { booksearch, profileredirect, Clickhandler, loanbook,addbook } = props;
   const bookIcon = 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Book-icon-bible.png';
   const [booksData, setBooksData] = useState([]);
 
@@ -48,7 +49,7 @@ function Main(props) {
 
       </div>
       <div className="HeaderButtons">
-        <button type="submit" className="button">
+        <button type="submit" className="button" onClick = {props.loanbook}>
           Loan Book
         </button>
         <button type="submit" className="button">
@@ -89,11 +90,13 @@ Main.propTypes = {
   booksearch: PropTypes.func,
   profileredirect: PropTypes.func,
   Clickhandler: PropTypes.func,
+  loanbook : PropTypes.func
 };
 Main.defaultProps = {
   booksearch: pass(),
   profileredirect: pass(),
   Clickhandler: pass(),
+  loanbook: pass(),
 };
 
 export default Main;
