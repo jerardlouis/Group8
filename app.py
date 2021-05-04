@@ -104,6 +104,7 @@ def login():
 def searchresults(category):
     '''responds with results from category search'''
     getResults()
+    print('hi')
     return {"results": RESULTS[category]}
 
 
