@@ -56,6 +56,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => setcategories(data.bookcategories));
     setpage(3);
+    //console.log(categories);
   }
   function profileredirect() {
     setpage(2);

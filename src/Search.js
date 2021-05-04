@@ -6,24 +6,26 @@ const fetch = require('node-fetch');
 
 function Search(props) {
   // Renders the search page based on the categories from the database
-  const [page, setpage] = useState(3);
-  const [results, setresults] = useState([]);
-  const [category, setcategory] = useState('none');
+  
   
     return (
-      <div className="Main">
-        <ul>
+      <div className="search-page">
+        <h2>Select the Category of books</h2>
           {props.bookcategories.map((x) => (
-            <div
+          <div className = "search-field">
+          <button 
               onClick={() => props.resulthandler(x)}
               role="button"
               tabIndex={0}
-              onKeyPress={() => props.resulthandler(x)}
-            >
-              <li>{x}</li>
+              >
+             {' '}
+              {x}
+              {' '}
+
+            </button>
             </div>
-          ))}
-        </ul>
+        ))}
+
       </div>
     );
   

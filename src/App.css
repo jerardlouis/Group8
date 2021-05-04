@@ -1,3 +1,52 @@
 .App {
   text-align: center;
 }
+
+/* ------- login ------- */
+.login{
+  margin-top: 20px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login > h2{
+  margin: 30px auto;
+  border-bottom: 2px solid;
+}
+.login > h1{
+  background-color: rgba(0, 0, 0, 0.171);
+  padding: 5px 15px;
+  border-radius: 15px ;
+}
+
+/* ------- Search Page CSS -------- */
+.search-page .result-page{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.search-page > h2 {
+  margin: 10px auto;
+  border-bottom: 2px solid black;
+  width: fit-content;
+}
+.result-page > h2 {
+  margin: 10px auto;
+  border-bottom: 2px solid black;
+  width: fit-content;
+}
+.search-field, .book-list{
+  margin: 5px auto;
+}
+.search-field > button{
+  padding: 2px 10px;
+}
+
+.book-list > button{
+  background-color: rgb(223, 223, 233);
+  padding: 2px 10px;
+  border: none;
+  font-style: bold;
+}

@@ -6,21 +6,23 @@ const fetch = require('node-fetch');
 function Results(props) {
   const [booklisting, setbooklisting] = useState([]);
     return (
-      <div className="Main">
-        <h1>
-          <ul>
+      <div className="result-page">
+      <h2>
+          Books result for
+          {props.category}
+        </h2>
             {props.results.map((x) => (
-              <div
+              <div className="book-list">
+              <button 
                 onClick={() => props.booklistinghandler(x)}
                 onKeyPress={() => props.booklistinghandler(x)}
-                role="button"
+                type="button"
                 tabIndex={0}
               >
-                <li>{x}</li>
+                {x}
+                </button>
               </div>
             ))}
-          </ul>
-        </h1>
       </div>
     );
   

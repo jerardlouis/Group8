@@ -15,14 +15,12 @@ module.exports = {
     'AddBook.js',
     //'BookListing.js',
     'Login.js',
-
     'Main.js',
     //'Profile.js',
     'Results.js',
     'Search.js',
   ],
   rules: {
-    //"padded-blocks": ["error", { "blocks": "always" }],
     "react/no-array-index-key": "off",
     "react-hooks/exhaustive-deps": "off",
     "react/jsx-filename-extension": "off",
