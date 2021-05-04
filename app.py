@@ -1,8 +1,9 @@
 '''Serves the bookbuster app'''
 import os
-from flask import Flask, send_from_directory,request  #json, request
+from flask import Flask, send_from_directory,request,redirect,url_for #json, request
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
+
 
 APP = Flask(__name__, static_folder='./build/static')
 
@@ -116,8 +117,21 @@ def book(category, bookname):
 
 @APP.route('/loan', methods=['POST'])
 def loan():
-    print(request.data)
-    '''responds with results from category search'''
+    print(request.form['bookname'])
+    print(request.form['price'])
+    print(request.form['condition'])
+    print(request.form['location'])
+    print(request.form['category'])
+    print(request.form['username'])
+    newrow = Book(username =request.form['username'],bookname = request.form['bookname'],price = request.form['price'],
+    condition =request.form['condition'],location = request.form['location'],category = request.form['category'])
+    DB.session.add(newrow)
+    DB.session.commit()
+    getBooklisting()
+    print(BOOKLISTING)
+    return redirect('https://1b192e7807c346c6bf22353e00e6c8ba.vfs.cloud9.us-east-1.amazonaws.com/')
+    
+    
     
    
 

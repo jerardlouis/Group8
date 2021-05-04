@@ -133,6 +133,7 @@ function App() {
     return (
       <div className="App">
         <Loan
+        username = {Username}
         mainredirect={mainredirect}/>
       </div>
     );
