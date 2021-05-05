@@ -1,29 +1,29 @@
-import './App.css';
-import React, { useState } from 'react';
-import Profile from './Profile';
-import Main from './Main';
-import Search from './Search';
-import BookListing from './BookListing';
-import Username from './Login';
-import Loan from './Loan';
-import Results from './Results.js'
-import AddBook from './components/AddBook';
+import "./App.css";
+import React, { useState } from "react";
+import Profile from "./Profile";
+import Main from "./Main";
+import Search from "./Search";
+import BookListing from "./BookListing";
+import Username from "./Login";
+import Loan from "./Loan";
+import Results from "./Results.js";
+import AddBook from "./components/AddBook";
 
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 function App() {
   const [page, setpage] = useState(1);
   const [categories, setcategories] = useState([]);
   const [results, setresults] = useState([]);
-  const [category, setcategory] = useState('none');
+  const [category, setcategory] = useState("none");
   const [booklisting, setbooklisting] = useState([
-    'Python for beginners',
-    '200',
-    'its great',
+    "Python for beginners",
+    "200",
+    "its great",
   ]);
-  const [status, setStatus] = useState('Not Logged In');
+  const [status, setStatus] = useState("Not Logged In");
   function Clickhandler(book) {
-    fetch(`/booksearch/Computer Science/${book}`, { method: 'GET' })
+    fetch(`/booksearch/Computer Science/${book}`, { method: "GET" })
       .then((response) => response.json())
       .then((data) => setbooklisting(data[book]));
     console.log(booklisting);
@@ -31,7 +31,7 @@ function App() {
   }
   function resulthandler(categorys) {
     console.log(categorys);
-    fetch(`/booksearch/${categorys}`, { method: 'GET' })
+    fetch(`/booksearch/${categorys}`, { method: "GET" })
       .then((response) => response.json())
       .then((data) => setresults(data.results));
     // console.log(results);
@@ -39,19 +39,19 @@ function App() {
     setpage(4);
   }
   function booklistinghandler(book) {
-    fetch(`/booksearch/${category}/${book}`, { method: 'GET' })
+    fetch(`/booksearch/${category}/${book}`, { method: "GET" })
       .then((response) => response.json())
       .then((data) => setbooklisting(data[book]));
-      setpage(5)
+    setpage(5);
   }
-  function loanbook(){
+  function loanbook() {
     setpage(7);
   }
   function booksearch() {
     /* function that brings up categories of books when you click the magnifying glass
     on the main page */
-    fetch('/booksearch', {
-      method: 'GET',
+    fetch("/booksearch", {
+      method: "GET",
     })
       .then((response) => response.json())
       .then((data) => setcategories(data.bookcategories));
@@ -65,10 +65,10 @@ function App() {
     setpage(1);
   }
   function addbook() {
-    console.log('click');
+    console.log("click");
     setpage(6);
   }
-  if (status === 'Not Logged In') return <Username function={setStatus} />;
+  if (status === "Not Logged In") return <Username function={setStatus} />;
   if (page === 1) {
     return (
       <div className="App">
@@ -76,9 +76,8 @@ function App() {
           booksearch={booksearch}
           profileredirect={profileredirect}
           Clickhandler={Clickhandler}
-          loanbook = {loanbook}
+          loanbook={loanbook}
           addbook={addbook}
-
         />
       </div>
     );
@@ -86,7 +85,7 @@ function App() {
   if (page === 3) {
     return (
       <div className="App">
-        <Search bookcategories={categories} resulthandler = {resulthandler}/>
+        <Search bookcategories={categories} resulthandler={resulthandler} />
       </div>
     );
   }
@@ -94,7 +93,7 @@ function App() {
     // if page is 3, results page
     return (
       <div className="App">
-        <Results results={results}  booklistinghandler = {booklistinghandler} />
+        <Results results={results} booklistinghandler={booklistinghandler} />
       </div>
     );
   }
@@ -132,9 +131,7 @@ function App() {
   if (page === 7) {
     return (
       <div className="App">
-        <Loan
-        username = {Username}
-        mainredirect={mainredirect}/>
+        <Loan username={Username} mainredirect={mainredirect} />
       </div>
     );
   }

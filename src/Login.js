@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { GoogleLogin } from 'react-google-login';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { GoogleLogin } from "react-google-login";
 
 function pass() {}
 export function Login(props) {
@@ -29,9 +29,7 @@ export function Login(props) {
         onFailure={responseGoogleFailed}
         cookiePolicy="single_host_origin"
       />
-      {
-        error ? (<div> Something Went Wrong! Try again. </div>) : <></>
-      }
+      {error ? <div> Something Went Wrong! Try again. </div> : <></>}
     </div>
   );
 }

@@ -1,47 +1,47 @@
-import React from 'react';
+import React from "react";
 
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 class AddBook extends React.Component {
   state = {
-    name: '',
-    price: '',
-    desc: '',
+    name: "",
+    price: "",
+    desc: "",
   };
 
-  handleAddBook = e => {
+  handleAddBook = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8081/addbook', {
-      method: 'POST',
+    fetch("http://localhost:8081/addbook", {
+      method: "POST",
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, PUT, DELETE, GET, OPTIONS',
-        'Access-Control-Request-Method': '*',
-        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, PUT, DELETE, GET, OPTIONS",
+        "Access-Control-Request-Method": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept, Authorization",
       },
       body: JSON.stringify({
         name: this.state.name,
         price: this.state.price,
         desc: this.state.desc,
       }),
-    }).then(response => {
+    }).then((response) => {
       console.log(response);
     });
-
   };
 
-  handlenameChange = e => {
+  handlenameChange = (e) => {
     this.setState({
       name: e.target.value,
     });
   };
 
-  handlepriceChange = e => {
+  handlepriceChange = (e) => {
     this.setState({
       price: e.target.value,
     });
   };
-  handledescChange = e => {
+  handledescChange = (e) => {
     this.setState({
       desc: e.target.value,
     });
@@ -49,7 +49,6 @@ class AddBook extends React.Component {
 
   render() {
     return (
-
       <form onSubmit={this.handleSubmit}>
         <img
           className="backButton"

@@ -1,9 +1,9 @@
-import emailjs from 'emailjs-com';
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './InterestedPage.css';
+import emailjs from "emailjs-com";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./InterestedPage.css";
 
-require('dotenv').config();
+require("dotenv").config();
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 const USER_ID = process.env.REACT_APP_USER_ID;
@@ -20,13 +20,13 @@ export default class InterestedPage extends Component {
   sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm(SERVICE_ID, 'BookBusterGMAIL', e.target, USER_ID).then(
+    emailjs.sendForm(SERVICE_ID, "BookBusterGMAIL", e.target, USER_ID).then(
       (result) => {
         console.log(result.text);
       },
       (error) => {
         console.log(error.text);
-      },
+      }
     );
     e.target.reset();
   }
