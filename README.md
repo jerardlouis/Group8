@@ -1,6 +1,6 @@
 # Book Busters
 Heroku link : https://morning-savannah-63873.herokuapp.com/
-Sprint 2 Heroku link: https://afternoon-springs-95300.herokuapp.com/
+                 Sprint 2 Heroku link: https://afternoon-springs-95300.herokuapp.com/
 To use this repository, you must follow these steps: 
 
 ## Requirements
