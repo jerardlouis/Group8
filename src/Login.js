@@ -23,11 +23,11 @@ export function Login(props) {
       <i>-- Best place to find your book --</i>
       <h2>Login using Google OAuth</h2>
       <GoogleLogin
-          clientId="705923672079-it54j78or9bfmmk9imbumuj4gh48sm1t.apps.googleusercontent.com" 
-          buttonText="Login with Google"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogleFailed}
-          cookiePolicy={'single_host_origin'}
+        clientId="67682372412-o04q4pmnj9cufpdne7jvt9hlf45nef0u.apps.googleusercontent.com"
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogleFailed}
+        cookiePolicy="single_host_origin"
       />
       {
         error ? (<div> Something Went Wrong! Try again. </div>) : <></>
