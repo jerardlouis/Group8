@@ -1,6 +1,6 @@
 # Book Busters
 Heroku link : https://morning-savannah-63873.herokuapp.com/
-
+Sprint 2 Heroku link: https://afternoon-springs-95300.herokuapp.com/
 To use this repository, you must follow these steps: 
 
 ## Requirements
@@ -31,3 +31,7 @@ To use this repository, you must follow these steps:
 5. Navigate to your app settings on Heroku and find 'Config Vars' section and click on Reveal Config Vars
 6. Copy and paste all variables and values from the .env file 
 7. Push to heroku by running git push heroku main
+
+
+
+
