@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
 
+// to get lint to work
+
 function Search(props) {
   // Renders the search page based on the categories from the database
   return (

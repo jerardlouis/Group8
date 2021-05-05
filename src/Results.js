@@ -1,5 +1,7 @@
 import React from 'react';
 
+// to get lint to work
+
 function Results(props) {
   return (
     <div className="result-page">

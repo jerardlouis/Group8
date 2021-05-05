@@ -5,7 +5,8 @@ function Loan(props) {
   function formSubmit() {
     props.mainredirect();
   }
-  // >
+  // to get lint to work
+
   return (
     <div className="Main">
       <h1> Loan a Book! </h1>
